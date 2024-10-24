@@ -28,6 +28,13 @@ public class LocalizedGreetingTest {
         String greeting = messages.getString("greeting");
         assertEquals("Bonjour!", greeting);
     }
+    @Test
+    public void testIranianGreeting() {
+        Locale locale = new Locale("fa", "IR");
+        ResourceBundle messages = ResourceBundle.getBundle("Message", locale);
+        String greeting = messages.getString("greeting");
+        assertEquals("سلام! به برنامه ما خوش آمدید", greeting);
+    }
 
     @Test
     public void testInvalidChoiceDefaultsToEnglish() {
